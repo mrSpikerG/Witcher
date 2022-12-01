@@ -1,0 +1,42 @@
+﻿<Window x:Class="Witcher.View.CharacterListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Witcher.View" xmlns:viewmodel="clr-namespace:Witcher.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:CharListViewModel}"
+        mc:Ignorable="d"
+        Title="Witcher Fandom (Unofficial)" Height="450" Width="800" Icon="/View/thewitcher2_93909.png">
+    <Grid Background="#161d31">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="687*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox SelectedItem="{Binding SelectedPreview}" BorderBrush="Transparent" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding Preview}" Margin="20,20,20,20" Grid.ColumnSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <local:PreviewUserControl Padding="20" DataContext="{Binding}" Width="160" Height="160">
+                        <local:PreviewUserControl.Effect>
+                            <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                        </local:PreviewUserControl.Effect>
+                    </local:PreviewUserControl>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <Button Grid.Row="1" Command="{Binding OpenCharacter}" Margin="137,10,250,10" BorderBrush="#361d31" Background="#283046" FontSize="20" Foreground="#fff" FontFamily="{StaticResource OldSoviet}" Grid.Column="1" >Открыть
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="9"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

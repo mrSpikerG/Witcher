@@ -1,0 +1,167 @@
+﻿<Window x:Class="WitcherServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WitcherServer" xmlns:viewmodel="clr-namespace:WitcherServer.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
+        mc:Ignorable="d"
+        Icon="/View/icon.png"
+        Title="Admin panel" Height="450" Width="800"
+        >
+
+    <Grid Background="#161d31">
+        <Grid.RowDefinitions>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+
+        </Grid.ColumnDefinitions>
+        <ListBox BorderBrush="Transparent"  Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Margin="20,20,20,20" Grid.ColumnSpan="2">
+            <Button Background="#283046" BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100" Command="{Binding OpenChapterCreator}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Создать главу"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+            <Button Background="#283046" BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100"  Command="{Binding OpenChapterRemover}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Удалить главу"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+            
+            <Button Background="#283046" BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100"  Command="{Binding OpenCharacterCreator}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Создать персонажа"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+            
+            <Button Command="{Binding OpenConnectionCreator}" Background="#283046" BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Связать главу и персонажа"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+
+            <Button Command="{Binding OpenConnectionRemover}" Background="#283046" BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Удалить связь главы и персонажа"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+
+            <Button  Command="{Binding OpenCharacterRemover}" Background="#283046" BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Удалить персонажа"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+
+            <Button Command="{Binding OpenPageTableCreator}"  Background="#283046" BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Добавить описание персонажа"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+
+            <Button Command="{Binding OpenPageTableRemover}" Background="#283046" BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Удалить описание персонажа"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+
+            <Button Background="#343536" BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Добавить текст на страничку"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+
+            <Button Background="#343536"  BorderBrush="Transparent" FontFamily="{StaticResource OldSoviet}" Width="100" Height="100" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Удалить текст со странички"/>
+                </Button.Content>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="20" Direction="-100"></DropShadowEffect>
+                </Button.Effect>
+            </Button>
+
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+    </Grid>
+
+</Window>

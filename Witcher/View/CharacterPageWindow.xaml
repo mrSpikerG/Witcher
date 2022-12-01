@@ -1,0 +1,34 @@
+﻿<Window x:Class="Witcher.View.CharacterPageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Witcher.View" xmlns:viewmodel="clr-namespace:Witcher.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:CharacterPageViewModel}"
+        mc:Ignorable="d"
+        Title="Witcher Fandom (Unofficial)" Height="450" Width="800" Icon="/View/thewitcher2_93909.png">
+    <Grid Background="#161d31">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <local:PageTableUserControl DataContext="{Binding Table}" Grid.Column="1" Grid.RowSpan="2"></local:PageTableUserControl>
+
+        <ListBox ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding PageText}" Margin="5 5" Grid.RowSpan="2" Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="0 25">
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Parent}" VerticalAlignment="Center" TextAlignment="Center" Grid.Column="1" Margin="20 0" FontSize="20" Foreground="#fff" FontFamily="{StaticResource OldSoviet}"></TextBlock>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" TextAlignment="Justify" Grid.Column="1" Margin="20 0" FontSize="11" Foreground="#fff" FontFamily="{StaticResource OldSoviet}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
+        </ListBox>
+
+    </Grid>
+</Window>

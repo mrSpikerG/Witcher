@@ -1,0 +1,26 @@
+﻿<Window x:Class="WitcherServer.View.CreateConnectionCharToChap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WitcherServer.View" 
+        xmlns:viewmodel="clr-namespace:WitcherServer.ViewModel" 
+        d:DataContext="{d:DesignInstance Type=viewmodel:ConnectionCharToChapViewModel}"
+        mc:Ignorable="d"
+        Icon="/View/icon.png"
+        Title="Create Connection" Height="300" Width="300">
+    <Grid Background="#161d31">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox Text="{Binding CharacterId}" TextBlock.TextAlignment="Center" Grid.Row="0" Margin="30 35"></TextBox>
+        <TextBox Text="{Binding ChapterId}" TextBlock.TextAlignment="Center" Grid.Row="1" Margin="30 35"></TextBox>
+        <Button Command="{Binding CreateChapter}" Background="#283046" BorderBrush="Transparent"  Grid.Row="3" Margin="50 5 50 15" FontSize="20" Foreground="#fff" FontFamily="{StaticResource OldSoviet}">Добавить
+            <Button.Effect>
+                <DropShadowEffect Direction="-100" BlurRadius="20"></DropShadowEffect>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>
